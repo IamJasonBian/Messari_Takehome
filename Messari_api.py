@@ -85,6 +85,7 @@ class api_reader():
                 base = base.merge(df, on ='Dates', how = 'outer')
                 
         return(base)
+    
                   
     
 def main():
@@ -98,6 +99,8 @@ def main():
     df = Messari.return_df(['DOT', 'UNI'], '2020-10-20', '2021-03-03')
     
     print(df)
+    
+    df.to_csv('results.csv', index = False)  
     
     
 if __name__ == "__main__":
